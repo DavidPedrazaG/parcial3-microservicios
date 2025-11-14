@@ -11,10 +11,10 @@ Cada operación del CRUD (Create, Read, Update, Delete) se maneja como un **serv
 parcial3-microservicios/
 │
 ├── services/
-│ ├── create/ # POST - Crear un item
-│ ├── read/ # GET - Leer todos los items
-│ ├── update/ # PUT - Actualizar un item
-│ └── delete/ # DELETE - Eliminar un item
+│ ├── create/ # POST - Crear un student
+│ ├── read/ # GET - Leer todos los students
+│ ├── update/ # PUT - Actualizar un student
+│ └── delete/ # DELETE - Eliminar un student
 │
 ├── docker-compose.yml
 ├── .github/workflows/ci.yml # CI con GitHub Actions
@@ -69,25 +69,25 @@ Copiar código
 docker compose ps
 ```
 ## 🧪 Pruebas del CRUD (cURL)
-### ➕ Crear un item
+### ➕ Crear un student
 ```
-curl -X POST http://localhost:8081/items \
+curl -X POST http://localhost:8081/students \
   -H "Content-Type: application/json" \
   -d '{"name":"Laptop","value":2000}'
  ```
-### 📖 Leer todos los items
+### 📖 Leer todos los students
 ```
-curl http://localhost:8082/items
+curl http://localhost:8082/students
 ```
-### 🔁 Actualizar un item
+### 🔁 Actualizar un student
 ```
-curl -X PUT http://localhost:8083/items/<ID> \
+curl -X PUT http://localhost:8083/students/<ID> \
   -H "Content-Type: application/json" \
   -d '{"name":"Laptop Pro","value":2500}'
   ```
-### ❌ Eliminar un item
+### ❌ Eliminar un student
 ```
-curl -X DELETE http://localhost:8084/items/<ID>
+curl -X DELETE http://localhost:8084/students/<ID>
 ```
 ## 🧰 Pruebas con Postman
 Puedes importar este archivo en Postman:
@@ -98,10 +98,10 @@ Parcial3-Microservicios.postman_collection.json
 Incluye las 4 operaciones:
 
 Operación	Método	URL
-Create	POST	http://localhost:8081/items
-Read	GET	http://localhost:8082/items
-Update	PUT	http://localhost:8083/items/:id
-Delete	DELETE	http://localhost:8084/items/:id
+Create	POST	http://localhost:8081/students
+Read	GET	http://localhost:8082/students
+Update	PUT	http://localhost:8083/students/:id
+Delete	DELETE	http://localhost:8084/students/:id
 
 ## ⚡ CI/CD con GitHub Actions
 Archivo: .github/workflows/ci.yml
@@ -155,10 +155,10 @@ docker compose down -v
 
 | Servicio | Puerto | Endpoint | Ejemplo de respuesta |
 |----------|--------|----------|----------------------|
-| Create | 8081 | POST /items | `{"name":"Laptop","value":2000}` |
-| Read | 8082 | GET /items | `[{"_id":"...","name":"Laptop","value":2000}]` |
-| Update | 8083 | PUT /items/:id | `{"status":"updated"}` |
-| Delete | 8084 | DELETE /items/:id | `{"status":"deleted"}` |
+| Create | 8081 | POST /students | `{"name":"Laptop","value":2000}` |
+| Read | 8082 | GET /students | `[{"_id":"...","name":"Laptop","value":2000}]` |
+| Update | 8083 | PUT /students/:id | `{"status":"updated"}` |
+| Delete | 8084 | DELETE /students/:id | `{"status":"deleted"}` |
 
 ---
 
