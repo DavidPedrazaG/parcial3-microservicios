@@ -127,16 +127,16 @@ jobs:
       - name: Tag and Push images to GHCR
         run: |
           echo "📦 Tagging images..."
-          docker tag parcial3-microservicios-create ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-create:latest
-          docker tag parcial3-microservicios-read ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-read:latest
-          docker tag parcial3-microservicios-update ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-update:latest
-          docker tag parcial3-microservicios-delete ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-delete:latest
+          docker tag parcial3-microservicios-create ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-create:latest
+          docker tag parcial3-microservicios-read ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-read:latest
+          docker tag parcial3-microservicios-update ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-update:latest
+          docker tag parcial3-microservicios-delete ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-delete:latest
 
           echo "🚀 Pushing images..."
-          docker push ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-create:latest
-          docker push ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-read:latest
-          docker push ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-update:latest
-          docker push ghcr.io/${{ toLower(github.repository_owner) }}/parcial3-delete:latest
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-create:latest
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-read:latest
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-update:latest
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/parcial3-delete:latest
 
   release:
     needs: build
