@@ -164,7 +164,7 @@ docker compose down -v
 
 ## 🧾 Autor
 
-**Camilo Duarte Rivera**  
+**David Pedraza**  
 Universidad EAM  
 Parcial #3 — Sistemas Operativos  
 Noviembre 2025
