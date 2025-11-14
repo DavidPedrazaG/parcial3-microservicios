@@ -17,7 +17,7 @@ func NewUpdateRepository(db *mongo.Database) *UpdateRepository {
 	return &UpdateRepository{collection: db.Collection("students")}
 }
 
-// UpdateByID actualiza fields (name, value) por _id
+// UpdateByID actualiza fields (name, age) por _id
 func (r *UpdateRepository) UpdateByID(ctx context.Context, id interface{}, update bson.M) (*mongo.UpdateResult, error) {
 	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 	defer cancel()

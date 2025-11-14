@@ -1,35 +1,71 @@
 {
   "info": {
-    "name": "Parcial3-Microservicios",
+    "name": "Parcial3-Estudiantes",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_postman_id": "parcial3-microservicios-collection"
+    "_postman_id": "parcial3-estudiantes-collection"
   },
-  "student": [
+  "item": [
     {
       "name": "Create - insert student",
       "request": {
         "method": "POST",
         "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": { "mode": "raw", "raw": "{ \"name\": \"Laptop\", \"value\": 2000 }" },
-        "url": { "raw": "http://localhost:8081/students", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["students"] }
+        "body": { 
+          "mode": "raw", 
+          "raw": "{ \"name\": \"Juan Pérez\", \"age\": 20 }" 
+        },
+        "url": {
+          "raw": "http://localhost:8081/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["students"]
+        }
       }
     },
     {
       "name": "Read - list students",
-      "request": { "method": "GET", "url": { "raw": "http://localhost:8082/students", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["students"] } }
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8082/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8082",
+          "path": ["students"]
+        }
+      }
     },
     {
       "name": "Update - update student",
       "request": {
         "method": "PUT",
         "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": { "mode": "raw", "raw": "{ \"name\": \"Laptop Pro\", \"value\": 2500 }" },
-        "url": { "raw": "http://localhost:8083/students/:id", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["students", ":id"] }
+        "body": { 
+          "mode": "raw", 
+          "raw": "{ \"name\": \"Juan Pérez\", \"age\": 21 }" 
+        },
+        "url": {
+          "raw": "http://localhost:8083/students/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["students", ":id"]
+        }
       }
     },
     {
       "name": "Delete - delete student",
-      "request": { "method": "DELETE", "url": { "raw": "http://localhost:8084/students/:id", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["students", ":id"] } }
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8084/students/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["students", ":id"]
+        }
+      }
     }
   ]
 }

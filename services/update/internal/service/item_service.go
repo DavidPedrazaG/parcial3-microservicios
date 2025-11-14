@@ -17,12 +17,12 @@ func NewStudentService(repo *repository.UpdateRepository) *StudentService {
 }
 
 // UpdateStudent recibe id (primitive.ObjectID o string) y un mapa con campos a actualizar
-func (s *StudentService) UpdateStudent(ctx context.Context, id interface{}, name string, value int) error {
+func (s *StudentService) UpdateStudent(ctx context.Context, id interface{}, name string, age int) error {
 	update := bson.M{}
 	if name != "" {
 		update["name"] = name
 	}
-	update["value"] = value
+	update["age"] = age
 	_, err := s.repo.UpdateByID(ctx, id, update)
 	return err
 }

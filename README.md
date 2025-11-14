@@ -73,7 +73,7 @@ docker compose ps
 ```
 curl -X POST http://localhost:8081/students \
   -H "Content-Type: application/json" \
-  -d '{"name":"Laptop","value":2000}'
+  -d '{"name":"Juan Pérez","age":20}'
  ```
 ### 📖 Leer todos los students
 ```
@@ -83,7 +83,7 @@ curl http://localhost:8082/students
 ```
 curl -X PUT http://localhost:8083/students/<ID> \
   -H "Content-Type: application/json" \
-  -d '{"name":"Laptop Pro","value":2500}'
+  -d '{"name":"Juan Pérez","age":21}'
   ```
 ### ❌ Eliminar un student
 ```

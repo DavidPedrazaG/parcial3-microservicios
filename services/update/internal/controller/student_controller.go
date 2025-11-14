@@ -17,8 +17,8 @@ import (
 )
 
 type ReqUpdate struct {
-	Name  string `json:"name"`
-	Value int    `json:"value"`
+	Name string `json:"name"`
+	Age  int    `json:"age"`
 }
 
 func NewHandler() http.Handler {
@@ -80,7 +80,7 @@ func NewHandler() http.Handler {
 			http.Error(w, "invalid json: "+err.Error(), http.StatusBadRequest)
 			return
 		}
-		if err := svc.UpdateStudent(r.Context(), id, payload.Name, payload.Value); err != nil {
+		if err := svc.UpdateStudent(r.Context(), id, payload.Name, payload.Age); err != nil {
 			http.Error(w, "update error: "+err.Error(), http.StatusInternalServerError)
 			return
 		}

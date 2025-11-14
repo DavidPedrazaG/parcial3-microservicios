@@ -16,8 +16,8 @@ import (
 )
 
 type Student struct {
-	Name  string `json:"name"`
-	Value int    `json:"value"`
+	Name string `json:"name"`
+	Age  int    `json:"age"`
 }
 
 func NewHandler() http.Handler {

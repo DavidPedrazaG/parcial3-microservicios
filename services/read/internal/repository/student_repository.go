@@ -8,9 +8,9 @@ import (
 )
 
 type Student struct {
-	ID    interface{} `bson:"_id,omitempty" json:"_id"`
-	Name  string      `bson:"name" json:"name"`
-	Value int         `bson:"value" json:"value"`
+	ID   interface{} `bson:"_id,omitempty" json:"_id"`
+	Name string      `bson:"name" json:"name"`
+	Age  int         `bson:"age" json:"age"`
 }
 
 type StudentRepository struct {
